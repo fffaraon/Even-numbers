@@ -1,0 +1,27 @@
+
+#include <iostream>
+#include <stdio.h>
+int main(void) {
+    int K = { 2 };
+    int M = { 4 };
+    int N = { 5 }; 
+    
+    int sum = M % 2 + N % 2 + K % 2;
+    if (sum == 3) {
+        K *= K;
+        M *= M;
+        N *= N;
+    }
+    if (sum == 2) {
+        if (M % 2 == 0) M++;
+        if (N % 2 == 0) N++;
+        if (K % 2 == 0) K++;
+    }
+    if (sum == 1) {
+        if (M % 2 == 1) M *= 2;
+        if (N % 2 == 1) N *= 2;
+        if (K % 2 == 1) K *= 2;
+    }
+    printf("K=%d.M=%d.N=%d", K, M, N);
+    return 0;
+}
